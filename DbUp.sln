@@ -1,0 +1,59 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{FA530374-E28B-419B-BCA2-82A0512774F2}"
+	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
+		..\build.cake = ..\build.cake
+		..\build.ps1 = ..\build.ps1
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dbup-core", "dbup-core\dbup-core.csproj", "{C98DE7C6-AF51-4901-904D-75FCCB17EE31}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dbup-oracle", "dbup-oracle\dbup-oracle.csproj", "{8DAD25CC-ACF6-4A3A-A008-090C55E8FFA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Database", "Project.Database\Project.Database.csproj", "{4D15E9ED-77B6-4DD0-B82E-C4636FC672D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Configuration", "Project.Configuration\Project.Configuration.csproj", "{C2A77F02-0263-423C-AE0D-6122348E4EFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Application", "Project.Application\Project.Application.csproj", "{5EC75BB2-BC6D-4D38-82C9-E001C60A7838}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Local|Any CPU = Local|Any CPU
+		Development|Any CPU = Development|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C98DE7C6-AF51-4901-904D-75FCCB17EE31}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{C98DE7C6-AF51-4901-904D-75FCCB17EE31}.Local|Any CPU.Build.0 = Local|Any CPU
+		{C98DE7C6-AF51-4901-904D-75FCCB17EE31}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{C98DE7C6-AF51-4901-904D-75FCCB17EE31}.Development|Any CPU.Build.0 = Development|Any CPU
+		{8DAD25CC-ACF6-4A3A-A008-090C55E8FFA0}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{8DAD25CC-ACF6-4A3A-A008-090C55E8FFA0}.Local|Any CPU.Build.0 = Local|Any CPU
+		{8DAD25CC-ACF6-4A3A-A008-090C55E8FFA0}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{8DAD25CC-ACF6-4A3A-A008-090C55E8FFA0}.Development|Any CPU.Build.0 = Development|Any CPU
+		{4D15E9ED-77B6-4DD0-B82E-C4636FC672D9}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{4D15E9ED-77B6-4DD0-B82E-C4636FC672D9}.Local|Any CPU.Build.0 = Local|Any CPU
+		{4D15E9ED-77B6-4DD0-B82E-C4636FC672D9}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{4D15E9ED-77B6-4DD0-B82E-C4636FC672D9}.Development|Any CPU.Build.0 = Development|Any CPU
+		{C2A77F02-0263-423C-AE0D-6122348E4EFC}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{C2A77F02-0263-423C-AE0D-6122348E4EFC}.Local|Any CPU.Build.0 = Local|Any CPU
+		{C2A77F02-0263-423C-AE0D-6122348E4EFC}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{C2A77F02-0263-423C-AE0D-6122348E4EFC}.Development|Any CPU.Build.0 = Development|Any CPU
+		{5EC75BB2-BC6D-4D38-82C9-E001C60A7838}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{5EC75BB2-BC6D-4D38-82C9-E001C60A7838}.Development|Any CPU.Build.0 = Development|Any CPU
+		{5EC75BB2-BC6D-4D38-82C9-E001C60A7838}.Local|Any CPU.ActiveCfg = Local|Any CPU
+		{5EC75BB2-BC6D-4D38-82C9-E001C60A7838}.Local|Any CPU.Build.0 = Local|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6807402B-EE7A-4324-A615-28F3499B1E9F}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = DbUp\DbUp.csproj
+	EndGlobalSection
+EndGlobal

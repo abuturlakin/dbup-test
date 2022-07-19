@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{4D15E9ED-77B6-4DD0-B82E-C4636FC672D9}</ProjectGuid>
+        <OutputType>Exe</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>Project.Database</RootNamespace>
+        <AssemblyName>Project.Database</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+      <DebugSymbols>true</DebugSymbols>
+      <DebugType>full</DebugType>
+      <Optimize>false</Optimize>
+      <DefineConstants>DEBUG;TRACE</DefineConstants>
+      <ErrorReport>prompt</ErrorReport>
+      <WarningLevel>4</WarningLevel>
+      <OutputPath>bin\Local\</OutputPath>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Development|AnyCPU' ">
+      <OutputPath>bin\Development\</OutputPath>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342">
+          <HintPath>..\packages\Oracle.ManagedDataAccess.12.2.1100\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Infrastructure\CommandParameters.cs" />
+        <Compile Include="Infrastructure\DbUpdateProcessor.cs" />
+        <Compile Include="Infrastructure\UpgradeType.cs" />
+        <Compile Include="Program.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\dbup-core\dbup-core.csproj">
+        <Project>{c98de7c6-af51-4901-904d-75fccb17ee31}</Project>
+        <Name>dbup-core</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\dbup-oracle\dbup-oracle.csproj">
+        <Project>{8dad25cc-acf6-4a3a-a008-090c55e8ffa0}</Project>
+        <Name>dbup-oracle</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Project.Configuration\Project.Configuration.csproj">
+        <Project>{c2a77f02-0263-423c-ae0d-6122348e4efc}</Project>
+        <Name>Project.Configuration</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="Scripts\Cleanup\script_000.sql" />
+      <EmbeddedResource Include="Scripts\Cleanup\script_001.sql" />
+      <EmbeddedResource Include="Scripts\Schema\script_001.sql" />
+      <EmbeddedResource Include="Scripts\Schema\script_002.sql" />
+      <EmbeddedResource Include="Scripts\Schema\script_003.sql" />
+      <EmbeddedResource Include="Scripts\Seed\script_001.sql" />
+      <EmbeddedResource Include="Scripts\Seed\script_002.sql" />
+      <EmbeddedResource Include="Scripts\Seed\script_003.sql" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="packages.config" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Scripts\Rollback" />
+    </ItemGroup>
+
+   <ItemGroup>
+      <Content Include="..\Project.Configuration\App.config" Link="App.config" />
+   </ItemGroup>
+
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

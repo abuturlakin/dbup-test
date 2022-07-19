@@ -1,0 +1,1 @@
+insert into SYSTEM.TEST_2 (ID, NAME) values (1, 'name 2')

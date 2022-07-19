@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net45</TargetFrameworks>
+    <Configurations>Local;Development</Configurations>
+    <Platforms>AnyCPU</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Local' ">
+    <DebugSymbols Condition=" '$(DebugSymbols)' == '' ">true</DebugSymbols>
+    <Optimize Condition=" '$(Optimize)' == '' ">false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Oracle.ManagedDataAccess">
+      <Version>21.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="Oracle.ManagedDataAccess.Core">
+      <Version>2.12.0-beta2</Version>
+    </PackageReference>
+    <PackageReference Include="Oracle.OracleClient">
+      <Version>4.121.2</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <PackageReference Include="Oracle.ManagedDataAccess">
+      <Version>12.2.1100</Version>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dbup-core\dbup-core.csproj" />
+  </ItemGroup>
+</Project>
